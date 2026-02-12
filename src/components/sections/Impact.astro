@@ -1,0 +1,58 @@
+---
+import StatCard from '../cards/StatCard.astro';
+
+// Impact statistics data
+const stats = [
+  {
+    number: '500+',
+    label: 'Global Clients',
+    icon: '🏢'
+  },
+  {
+    number: '1M+',
+    label: 'Users Worldwide',
+    icon: '👥'
+  },
+  {
+    number: '98%',
+    label: 'Client Satisfaction',
+    icon: '⭐'
+  },
+  {
+    number: '50+',
+    label: 'Countries Served',
+    icon: '🌍'
+  }
+];
+---
+
+<section id="impact" class="section-padding bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-700 text-white relative overflow-hidden">
+  <!-- Background Pattern -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=&quot;60&quot; height=&quot;60&quot; viewBox=&quot;0 0 60 60&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cg fill=&quot;none&quot; fill-rule=&quot;evenodd&quot;%3E%3Cg fill=&quot;%23ffffff&quot; fill-opacity=&quot;1&quot;%3E%3Cpath d=&quot;M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z&quot;/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+        Our <span class="bg-clip-text text-transparent bg-gradient-to-r from-white to-primary-200">Impact</span>
+      </h2>
+      <p class="text-xl text-primary-100">
+        Measurable results and transformative impact across the globe
+      </p>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+      {stats.map((stat, index) => (
+        <div 
+          class="reveal" 
+          style={`animation-delay: ${index * 0.15}s;`}
+        >
+          <StatCard {...stat} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

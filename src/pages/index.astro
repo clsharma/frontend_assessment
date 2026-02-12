@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import MobileMenu from '../components/MobileMenu.tsx';
+import Hero from '../components/sections/Hero.astro';
+import Legacy from '../components/sections/Legacy.astro';
+import Innovation from '../components/sections/Innovation.astro';
+import Impact from '../components/sections/Impact.astro';
+import CTA from '../components/sections/CTA.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+  <MobileMenu client:load />
+  
+  <main>
+    <Hero />
+    <Legacy />
+    <Innovation />
+    <Impact />
+    <CTA />
+  </main>
+  
+  <Footer />
+</Layout>

@@ -1,0 +1,63 @@
+---
+import FeatureCard from '../cards/FeatureCard.astro';
+
+// Innovation features data
+const innovations = [
+  {
+    title: 'AI-Powered Solutions',
+    description: 'Leveraging artificial intelligence to create smarter, more efficient systems that adapt to user needs and drive business growth.',
+    icon: '🤖'
+  },
+  {
+    title: 'Cloud Infrastructure',
+    description: 'Scalable and secure cloud-based solutions that enable businesses to operate efficiently from anywhere in the world.',
+    icon: '☁️'
+  },
+  {
+    title: 'Mobile-First Design',
+    description: 'Cutting-edge mobile applications designed for optimal user experience across all devices and platforms.',
+    icon: '📱'
+  },
+  {
+    title: 'Data Analytics',
+    description: 'Advanced analytics tools that transform raw data into actionable insights for informed decision-making.',
+    icon: '📊'
+  },
+  {
+    title: 'Cybersecurity',
+    description: 'Enterprise-grade security solutions protecting your business from evolving digital threats and vulnerabilities.',
+    icon: '🔒'
+  },
+  {
+    title: 'IoT Integration',
+    description: 'Seamless integration of Internet of Things devices to create connected, intelligent ecosystems.',
+    icon: '🌐'
+  }
+];
+---
+
+<section id="innovation" class="section-padding bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+        Driving <span class="text-gradient">Innovation</span>
+      </h2>
+      <p class="text-xl text-gray-600">
+        Pioneering technologies and solutions that shape the future of industries
+      </p>
+    </div>
+
+    <!-- Features Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      {innovations.map((innovation, index) => (
+        <div 
+          class="reveal" 
+          style={`animation-delay: ${index * 0.1}s;`}
+        >
+          <FeatureCard {...innovation} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
