@@ -1,0 +1,53 @@
+---
+import LegacyCard from '../cards/LegacyCard.astro';
+
+// Legacy milestones data
+const milestones = [
+  {
+    year: '2010',
+    title: 'Company Founded',
+    description: 'Started our journey with a vision to transform industries through innovative solutions and cutting-edge technology.'
+  },
+  {
+    year: '2015',
+    title: 'Global Expansion',
+    description: 'Expanded operations to 15 countries, establishing ourselves as a global leader in technology innovation.'
+  },
+  {
+    year: '2018',
+    title: 'Industry Recognition',
+    description: 'Received prestigious awards for excellence in innovation and sustainable business practices.'
+  },
+  {
+    year: '2023',
+    title: 'Future Forward',
+    description: 'Launched next-generation products and services, setting new standards in the industry.'
+  }
+];
+---
+
+<section id="legacy" class="section-padding bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
+        Our <span class="text-gradient">Legacy</span>
+      </h2>
+      <p class="text-xl text-gray-600">
+        A journey of continuous innovation and excellence spanning over a decade
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="max-w-5xl mx-auto space-y-6">
+      {milestones.map((milestone, index) => (
+        <div 
+          class="reveal" 
+          style={`animation-delay: ${index * 0.15}s;`}
+        >
+          <LegacyCard {...milestone} />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
