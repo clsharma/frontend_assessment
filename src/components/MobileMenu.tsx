@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,10 +12,18 @@ export default function MobileMenu() {
   };
 
   // Listen to toggle button clicks from outside React
-  if (typeof window !== 'undefined') {
+  useEffect(() => {
     const toggleButton = document.getElementById('mobile-menu-toggle');
-    toggleButton?.addEventListener('click', toggleMenu);
-  }
+    
+    if (toggleButton) {
+      toggleButton.addEventListener('click', toggleMenu);
+      
+      // Cleanup function to remove event listener
+      return () => {
+        toggleButton.removeEventListener('click', toggleMenu);
+      };
+    }
+  }, []); // Empty dependency array means this runs once on mount
 
   return (
     <>
